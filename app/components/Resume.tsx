@@ -47,6 +47,14 @@ export default function Resume() {
               <h4 className="resume-item-title">PHP Certified</h4>
               <p className="resume-item-period">2010</p>
             </div>
+
+            <a
+              href="/Abu Saleh Muhammad Shaon.pdf"
+              download="Abu Saleh Muhammad Shaon.pdf"
+              className="resume-download-btn"
+            >
+              View My Resume In PDF
+            </a>
           </div>
 
           {/* Right Column - Professional Experience */}
