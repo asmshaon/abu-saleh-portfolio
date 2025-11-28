@@ -124,6 +124,207 @@ export default function About() {
               to meet your needs. Feel free to reach out for professional
               assistance tailored to your goals.
             </p>
+
+            {/* Skills Section */}
+            <div className="skills-section mt-12">
+              <h3 className="skills-title">Skills</h3>
+              <div className="skills-underline"></div>
+
+              <p className="skills-description">
+                Skilled in modern frameworks, design tools, and full-stack
+                development.
+              </p>
+
+              <div className="skills-grid">
+                {/* Left Column */}
+                <div className="skills-column">
+                  <div className="skill-item">
+                    <div className="skill-header">
+                      <span className="skill-name">PHP & LARAVEL</span>
+                      <span className="skill-percentage">95%</span>
+                    </div>
+                    <div className="skill-bar">
+                      <div
+                        className="skill-progress"
+                        style={{ width: "95%" }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div className="skill-item">
+                    <div className="skill-header">
+                      <span className="skill-name">NODE.JS & EXPRESS</span>
+                      <span className="skill-percentage">90%</span>
+                    </div>
+                    <div className="skill-bar">
+                      <div
+                        className="skill-progress"
+                        style={{ width: "90%" }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div className="skill-item">
+                    <div className="skill-header">
+                      <span className="skill-name">TYPESCRIPT</span>
+                      <span className="skill-percentage">80%</span>
+                    </div>
+                    <div className="skill-bar">
+                      <div
+                        className="skill-progress"
+                        style={{ width: "80%" }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div className="skill-item">
+                    <div className="skill-header">
+                      <span className="skill-name">PYTHON & FASTAPI</span>
+                      <span className="skill-percentage">65%</span>
+                    </div>
+                    <div className="skill-bar">
+                      <div
+                        className="skill-progress"
+                        style={{ width: "65%" }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div className="skill-item">
+                    <div className="skill-header">
+                      <span className="skill-name">NEXT.JS & REACT</span>
+                      <span className="skill-percentage">90%</span>
+                    </div>
+                    <div className="skill-bar">
+                      <div
+                        className="skill-progress"
+                        style={{ width: "90%" }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div className="skill-item">
+                    <div className="skill-header">
+                      <span className="skill-name">NODE.JS & NEST.JS</span>
+                      <span className="skill-percentage">80%</span>
+                    </div>
+                    <div className="skill-bar">
+                      <div
+                        className="skill-progress"
+                        style={{ width: "80%" }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div className="skill-item">
+                    <div className="skill-header">
+                      <span className="skill-name">SYSTEM DESIGN</span>
+                      <span className="skill-percentage">85%</span>
+                    </div>
+                    <div className="skill-bar">
+                      <div
+                        className="skill-progress"
+                        style={{ width: "85%" }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Column */}
+                <div className="skills-column">
+                  <div className="skill-item">
+                    <div className="skill-header">
+                      <span className="skill-name">TAILWIND & BOOTSTRAP</span>
+                      <span className="skill-percentage">60%</span>
+                    </div>
+                    <div className="skill-bar">
+                      <div
+                        className="skill-progress"
+                        style={{ width: "60%" }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div className="skill-item">
+                    <div className="skill-header">
+                      <span className="skill-name">DOCKER & KUBERNETES</span>
+                      <span className="skill-percentage">35%</span>
+                    </div>
+                    <div className="skill-bar">
+                      <div
+                        className="skill-progress"
+                        style={{ width: "35%" }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div className="skill-item">
+                    <div className="skill-header">
+                      <span className="skill-name">REST API & GRAPHQL</span>
+                      <span className="skill-percentage">90%</span>
+                    </div>
+                    <div className="skill-bar">
+                      <div
+                        className="skill-progress"
+                        style={{ width: "90%" }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div className="skill-item">
+                    <div className="skill-header">
+                      <span className="skill-name">MYSQL & POSTGRES</span>
+                      <span className="skill-percentage">95%</span>
+                    </div>
+                    <div className="skill-bar">
+                      <div
+                        className="skill-progress"
+                        style={{ width: "95%" }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div className="skill-item">
+                    <div className="skill-header">
+                      <span className="skill-name">AWS & CLOUD NATIVE</span>
+                      <span className="skill-percentage">35%</span>
+                    </div>
+                    <div className="skill-bar">
+                      <div
+                        className="skill-progress"
+                        style={{ width: "35%" }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div className="skill-item">
+                    <div className="skill-header">
+                      <span className="skill-name">GIT & CI/CD</span>
+                      <span className="skill-percentage">60%</span>
+                    </div>
+                    <div className="skill-bar">
+                      <div
+                        className="skill-progress"
+                        style={{ width: "60%" }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div className="skill-item">
+                    <div className="skill-header">
+                      <span className="skill-name">MONGODB</span>
+                      <span className="skill-percentage">80%</span>
+                    </div>
+                    <div className="skill-bar">
+                      <div
+                        className="skill-progress"
+                        style={{ width: "80%" }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

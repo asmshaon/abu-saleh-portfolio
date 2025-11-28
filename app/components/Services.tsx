@@ -47,8 +47,9 @@ export default function Services() {
         <p className="section-description">
           Full Stack Developer and Solution Architect with over 15 years of
           experience delivering scalable, high-availability, and cost-efficient
-          web applications. Skilled in PHP, Node.js, React, with strong expertise
-          in AI integration, payment systems, and cloud-native architecture.
+          web applications. Skilled in PHP, Node.js, React, with strong
+          expertise in AI integration, payment systems, and cloud-native
+          architecture.
         </p>
 
         <div className="services-grid">
@@ -65,9 +66,9 @@ export default function Services() {
         <div className="testimonials-section">
           <h3 className="testimonials-title">Testimonials</h3>
           <p className="testimonials-description">
-            Hear from my clients about their experiences! Discover how my
-            expertise in software development has helped businesses grow with
-            efficient, scalable and reliable application.
+            Hear from my clients about their experiences! See how my expertise
+            in software development has helped businesses grow through
+            efficient, scalable, and reliable applications.
           </p>
 
           <div className="testimonials-grid">

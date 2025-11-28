@@ -33,9 +33,9 @@ export default function Contact() {
         <div className="title-underline"></div>
 
         <p className="section-description">
-          Get in touch with me! Whether you have a project in mind, need
-          consultation, or just want to discuss ideas, feel free to reach out.
-          I&apos;m here to help turn your vision into reality.
+          Get in touch! Whether you’re planning a project, need expert
+          consultation, or simply want to bounce around ideas, feel free to
+          reach out. I’m here to help bring your vision to life.
         </p>
 
         <div className="contact-content">
@@ -44,7 +44,7 @@ export default function Contact() {
             <div className="contact-info-item">
               <div className="contact-info-icon">📍</div>
               <div>
-                <h4 className="contact-info-title">Address</h4>
+                <h4 className="contact-info-title">Location</h4>
                 <p className="contact-info-text">Dhaka, Bangladesh</p>
               </div>
             </div>
