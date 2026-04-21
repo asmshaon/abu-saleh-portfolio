@@ -632,15 +632,8 @@ html {
 
 .skill-item {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.skill-header {
-  display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.25rem;
 }
 
 .skill-name {
@@ -651,27 +644,33 @@ html {
   letter-spacing: 0.5px;
 }
 
-.skill-percentage {
-  font-size: 0.875rem;
+.skill-badge {
+  font-size: 0.7rem;
   font-weight: 600;
-  color: var(--foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
 }
 
-.skill-bar {
-  width: 100%;
-  height: 10px;
-  background: rgba(51, 65, 85, 0.4);
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
+.skill-badge.expert {
+  background: rgba(8, 145, 178, 0.2);
+  color: #0891b2;
 }
 
-.skill-progress {
-  height: 100%;
-  background: rgba(8, 145, 178, 0.6);
-  border-radius: 10px;
-  transition: width 1s ease-out;
-  box-shadow: none;
+.skill-badge.advanced {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+.skill-badge.intermediate {
+  background: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.skill-badge.beginner {
+  background: rgba(148, 163, 184, 0.2);
+  color: #94a3b8;
 }
 
 /* Stats Grid */
