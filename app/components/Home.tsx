@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const titles = [
@@ -61,24 +60,14 @@ export default function Home() {
 
       <div className="home-content">
         <div className="home-text">
+          <p className="home-greeting">Hello, I&apos;m</p>
           <h1 className="home-title">Abu Saleh Muhammad Shaon</h1>
           <p className="home-subtitle">
             I&apos;m <span className="typing-text">{displayedText}</span>
           </p>
-          <a href="#contact" className="btn-primary">
-            Contact Me
-          </a>
-        </div>
-
-        <div className="home-image">
-          <div className="image-frame">
-            <Image
-              src="/portait-profile.png"
-              alt="Abu Saleh Muhammad Shaon"
-              width={400}
-              height={500}
-              className="profile-main"
-            />
+          <div className="home-buttons">
+            <a href="#contact" className="btn-primary">Contact Me</a>
+            <a href="/Abu%20Saleh%20Muhammad%20Shaon.pdf" target="_blank" className="btn-secondary">Download CV</a>
           </div>
         </div>
       </div>
