@@ -19,13 +19,16 @@ jobs:
           port: 22
           script: |
             set -e
+            trap 'echo "❌ Deployment failed at line $LINENO"' ERR
 
             echo "➡️ Load NVM"
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
             echo "➡️ Use Node version"
-            nvm use default
+            nvm use --lts
+
+            export NODE_ENV=production
 
             echo "➡️ Go to project directory"
             cd /home/ubuntu/abu-saleh-portfolio
@@ -33,13 +36,18 @@ jobs:
             echo "➡️ Pull latest code"
             git pull origin main
 
+            echo "➡️ Clean previous build"
+            rm -rf .next
+
             echo "➡️ Install dependencies"
-            npm install
+            npm ci
 
             echo "➡️ Build Next.js app"
             npm run build
 
             echo "➡️ Restart app (PM2)"
-            pm2 reload next-app || pm2 start npm --name "next-app" -- start
+            pm2 describe next-app > /dev/null \
+              && pm2 reload next-app \
+              || pm2 start npm --name "next-app" -- start
 
             echo "✅ Deployment completed"
