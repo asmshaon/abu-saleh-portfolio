@@ -1,0 +1,38 @@
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            set -e
+
+            echo "➡️ Go to project directory"
+            cd /home/ubuntu/abu-saleh-portfolio
+
+            echo "➡️ Pull latest code"
+            git pull origin main
+
+            echo "➡️ Install dependencies"
+            npm install
+
+            echo "➡️ Build Next.js app"
+            npm run build
+
+            echo "➡️ Restart app (PM2)"
+            pm2 reload next-app || pm2 start npm --name "next-app" -- start
+
+            echo "✅ Deployment completed"
