@@ -40,7 +40,7 @@ jobs:
             rm -rf .next
 
             echo "➡️ Install dependencies"
-            npm ci
+            npm ci --include=dev
 
             echo "➡️ Build Next.js app"
             npm run build
