@@ -20,6 +20,13 @@ jobs:
           script: |
             set -e
 
+            echo "➡️ Load NVM"
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+            echo "➡️ Use Node version"
+            nvm use default
+
             echo "➡️ Go to project directory"
             cd /home/ubuntu/abu-saleh-portfolio
 
