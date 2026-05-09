@@ -46,8 +46,8 @@ jobs:
             npm run build
 
             echo "➡️ Restart app (PM2)"
-            pm2 describe next-app > /dev/null \
-              && pm2 reload next-app \
-              || pm2 start npm --name "next-app" -- start
+            pm2 describe portfolio-app > /dev/null \
+              && pm2 reload portfolio-app \
+              || pm2 start npm --name "portfolio-app" -- start -- --port 3001
 
             echo "✅ Deployment completed"
