@@ -63,72 +63,72 @@ export default function Services() {
         </div>
 
         {/* Testimonials */}
-        <div className="testimonials-section">
-          <h3 className="testimonials-title">Testimonials</h3>
-          <p className="testimonials-description">
-            Hear from my clients about their experiences! See how my expertise
-            in software development has helped businesses grow through
-            efficient, scalable, and reliable applications.
-          </p>
+        {/*<div className="testimonials-section">*/}
+        {/*  <h3 className="testimonials-title">Testimonials</h3>*/}
+        {/*  <p className="testimonials-description">*/}
+        {/*    Hear from my clients about their experiences! See how my expertise*/}
+        {/*    in software development has helped businesses grow through*/}
+        {/*    efficient, scalable, and reliable applications.*/}
+        {/*  </p>*/}
 
-          <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <div className="quote-icon">&quot;</div>
-              <p className="testimonial-text">
-                Abu was a pleasure to work with. He is professional, reliable,
-                and a very hard worker. Always positive, he works well both
-                independently and as part of a team. He consistently made
-                himself available when needed and brought creative,
-                out-of-the-box thinking to every project. Abu stays up to date
-                with best practices and modern frameworks, ensuring high-quality
-                results. I highly recommend him for full-stack development work.
-              </p>
-              <div className="testimonial-author">
-                <div className="testimonial-stars">★★★★★</div>
-                <strong>Upwork Client</strong>
-              </div>
-            </div>
+        {/*  <div className="testimonials-grid">*/}
+        {/*    <div className="testimonial-card">*/}
+        {/*      <div className="quote-icon">&quot;</div>*/}
+        {/*      <p className="testimonial-text">*/}
+        {/*        Abu was a pleasure to work with. He is professional, reliable,*/}
+        {/*        and a very hard worker. Always positive, he works well both*/}
+        {/*        independently and as part of a team. He consistently made*/}
+        {/*        himself available when needed and brought creative,*/}
+        {/*        out-of-the-box thinking to every project. Abu stays up to date*/}
+        {/*        with best practices and modern frameworks, ensuring high-quality*/}
+        {/*        results. I highly recommend him for full-stack development work.*/}
+        {/*      </p>*/}
+        {/*      <div className="testimonial-author">*/}
+        {/*        <div className="testimonial-stars">★★★★★</div>*/}
+        {/*        <strong>Upwork Client</strong>*/}
+        {/*      </div>*/}
+        {/*    </div>*/}
 
-            <div className="testimonial-card">
-              <div className="quote-icon">&quot;</div>
-              <p className="testimonial-text">
-                I can&apos;t recommend Abu enough. He was a pleasure to work
-                with from start to finish. Abu demonstrated strong technical
-                expertise across both front-end and back-end development,
-                delivering clean, efficient code and thoughtful solutions
-                throughout the project. He is a very hard worker, listener and
-                problem solver. I came to him only with an idea and he built it
-                from scratch. Communication was clear, prompt, and professional,
-                and he consistently met (or beat) deadlines. What really stood
-                out was his proactive approach to solving problems and
-                suggesting improvements that added real value. I will absolutely
-                hire Abu again for future projects and recommend him to anyone
-                looking for a skilled and dependable developer.
-              </p>
-              <div className="testimonial-author">
-                <div className="testimonial-stars">★★★★★</div>
-                <strong>Upwork Client</strong>
-              </div>
-            </div>
+        {/*    <div className="testimonial-card">*/}
+        {/*      <div className="quote-icon">&quot;</div>*/}
+        {/*      <p className="testimonial-text">*/}
+        {/*        I can&apos;t recommend Abu enough. He was a pleasure to work*/}
+        {/*        with from start to finish. Abu demonstrated strong technical*/}
+        {/*        expertise across both front-end and back-end development,*/}
+        {/*        delivering clean, efficient code and thoughtful solutions*/}
+        {/*        throughout the project. He is a very hard worker, listener and*/}
+        {/*        problem solver. I came to him only with an idea and he built it*/}
+        {/*        from scratch. Communication was clear, prompt, and professional,*/}
+        {/*        and he consistently met (or beat) deadlines. What really stood*/}
+        {/*        out was his proactive approach to solving problems and*/}
+        {/*        suggesting improvements that added real value. I will absolutely*/}
+        {/*        hire Abu again for future projects and recommend him to anyone*/}
+        {/*        looking for a skilled and dependable developer.*/}
+        {/*      </p>*/}
+        {/*      <div className="testimonial-author">*/}
+        {/*        <div className="testimonial-stars">★★★★★</div>*/}
+        {/*        <strong>Upwork Client</strong>*/}
+        {/*      </div>*/}
+        {/*    </div>*/}
 
-            <div className="testimonial-card">
-              <div className="quote-icon">&quot;</div>
-              <p className="testimonial-text">
-                Abu Saleh is one of the best developers I&apos;ve ever worked
-                with on Upwork. He not only can accomplish any job presented to
-                him, but he makes really sound judgements on how to fill in all
-                the gaps that were previously undefined. In addition to this, he
-                has exceptional leadership skills as he led our team of
-                developers to complete the project at hand. We have already
-                re-hired him for our next project. Highly recommend.
-              </p>
-              <div className="testimonial-author">
-                <div className="testimonial-stars">★★★★★</div>
-                <strong>Upwork Client</strong>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/*    <div className="testimonial-card">*/}
+        {/*      <div className="quote-icon">&quot;</div>*/}
+        {/*      <p className="testimonial-text">*/}
+        {/*        Abu Saleh is one of the best developers I&apos;ve ever worked*/}
+        {/*        with on Upwork. He not only can accomplish any job presented to*/}
+        {/*        him, but he makes really sound judgements on how to fill in all*/}
+        {/*        the gaps that were previously undefined. In addition to this, he*/}
+        {/*        has exceptional leadership skills as he led our team of*/}
+        {/*        developers to complete the project at hand. We have already*/}
+        {/*        re-hired him for our next project. Highly recommend.*/}
+        {/*      </p>*/}
+        {/*      <div className="testimonial-author">*/}
+        {/*        <div className="testimonial-stars">★★★★★</div>*/}
+        {/*        <strong>Upwork Client</strong>*/}
+        {/*      </div>*/}
+        {/*    </div>*/}
+        {/*  </div>*/}
+        {/*</div>*/}
       </div>
     </section>
   );

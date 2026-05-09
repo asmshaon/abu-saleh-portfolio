@@ -119,7 +119,7 @@ export default function About() {
             <p className="about-text mt-6">
               I am available for freelance projects, consultations, part-time,
               and full-time opportunities. With extensive experience in web
-              development and a proven track record on Upwork, I'm ready to
+              development and a proven track record on Upwork, I&apos;m ready to
               collaborate on projects of any scale, offering flexible solutions
               to meet your needs. Feel free to reach out for professional
               assistance tailored to your goals.

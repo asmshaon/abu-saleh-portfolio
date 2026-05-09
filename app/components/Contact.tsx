@@ -48,7 +48,7 @@ export default function Contact() {
           message: data.error || "Failed to send message. Please try again.",
         });
       }
-    } catch (error) {
+    } catch {
       setStatusMessage({
         type: "error",
         message: "An error occurred. Please try again later.",
@@ -195,13 +195,6 @@ export default function Contact() {
               </button>
             </form>
           </div>
-        </div>
-
-        {/* Footer */}
-        <div className="footer">
-          <p>
-            © Copyright <strong>asmshaon</strong> All Rights Reserved
-          </p>
         </div>
       </div>
     </section>
