@@ -2,12 +2,12 @@ export default function Resume() {
   return (
     <section id="resume" className="section">
       <div className="container">
-        <h2 className="section-title">Resume</h2>
+        <h2 className="section-title">Experience</h2>
         <div className="title-underline"></div>
 
         <p className="section-description">
-          Below, I have outlined my educational background and professional
-          experience.
+          A snapshot of my education, career history, and the skills I have
+          built along the way.
         </p>
 
         <div className="resume-grid">

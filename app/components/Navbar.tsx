@@ -7,7 +7,7 @@ import { Sun, Moon, Menu, X } from "lucide-react";
 const menuItems = [
   { id: "portfolio", label: "Portfolio", active: false },
   { id: "services", label: "Services", active: false },
-  { id: "resume", label: "Resume", active: false },
+  { id: "resume", label: "Experience", active: false },
 ];
 
 function ThemeToggle() {
