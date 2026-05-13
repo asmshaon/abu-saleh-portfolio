@@ -70,18 +70,23 @@ body {
   }
 }
 
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--background);
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--sidebar-bg);
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--accent);
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
