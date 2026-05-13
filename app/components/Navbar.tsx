@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Sun, Moon, Menu, X } from "lucide-react";
+import Link from "next/link";
 
 const menuItems = [
   { id: "portfolio", label: "Portfolio" },
@@ -125,9 +126,8 @@ export default function Navbar() {
           <div className="flex items-center h-16 lg:h-20">
             {/* Logo — left, takes equal space */}
             <div className="flex items-center flex-1">
-              <a
-                href="https://asmshaon.tech"
-                target="_blank"
+              <Link
+                href="/"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
               >
@@ -138,7 +138,7 @@ export default function Navbar() {
                   <div className="text-white font-semibold text-sm leading-tight">Abu Saleh</div>
                   <div className="text-gray-400 text-xs leading-tight">Senior Software Engineer</div>
                 </div>
-              </a>
+              </Link>
             </div>
 
             {/* Desktop Links — Centered */}
