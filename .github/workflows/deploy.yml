@@ -17,13 +17,19 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
+          timeout: 60s
+          command_timeout: 15m
           script: |
             set -e
             trap 'echo "❌ Deployment failed at line $LINENO"' ERR
 
             echo "➡️ Load NVM"
             export NVM_DIR="$HOME/.nvm"
-            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            if [ ! -s "$NVM_DIR/nvm.sh" ]; then
+              echo "❌ nvm not found at $NVM_DIR/nvm.sh"
+              exit 1
+            fi
+            \. "$NVM_DIR/nvm.sh"
 
             echo "➡️ Use Node version"
             nvm use --lts
@@ -46,8 +52,13 @@ jobs:
             npm run build
 
             echo "➡️ Restart app (PM2)"
-            pm2 describe portfolio-app > /dev/null \
-              && pm2 reload portfolio-app \
-              || pm2 start npm --name "portfolio-app" -- start -- --port 3001
+            if pm2 describe portfolio-app > /dev/null 2>&1; then
+              pm2 reload portfolio-app --update-env
+            else
+              pm2 start npm --name "portfolio-app" -- start -- --port 3001
+            fi
+
+            echo "➡️ Persist PM2 process list"
+            pm2 save
 
             echo "✅ Deployment completed"
