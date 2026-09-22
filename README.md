@@ -1,175 +1,130 @@
-# Portfolio Website - Md. Rifat Hossain
+# Abu Saleh Muhammad Shaon — Portfolio
 
-A modern, responsive portfolio website built with Next.js 16, TypeScript, and Tailwind CSS 4. Features a dark theme design with smooth animations and hash-based navigation.
+Personal portfolio of **Abu Saleh Muhammad Shaon**, a Senior Full-Stack Software Engineer and Solution Architect with 15+ years of experience building scalable, high-availability, and cost-efficient web applications.
+
+**Live:** [portfolio.asmshaon.tech](https://portfolio.asmshaon.tech/)
+
+Built with Next.js 16, React 19, TypeScript, and Tailwind CSS 4.
+
+## About Me
+
+Full Stack Developer and Solution Architect skilled in PHP, Node.js, and React, with strong expertise in AI integration, payment systems, and cloud-native architecture. Top-Rated Plus on Upwork with 25K+ hours and a 100% job success rate.
+
+- **LinkedIn:** [linkedin.com/in/asmshaon](https://www.linkedin.com/in/asmshaon)
+- **GitHub:** [github.com/asmshaon](https://github.com/asmshaon)
+- **X:** [x.com/asmshaon](https://x.com/asmshaon)
+- **Location:** Bangladesh (GMT+6)
+
+## Sections
+
+The site is a single page with hash-based navigation:
+
+1. **Portfolio** (`#portfolio`): selected projects, including a B2B car booking engine, a B2C travel/cruise/hotel platform, and a sports e-commerce SaaS
+2. **Services** (`#services`): full-stack development, system design and architecture, backend, frontend, API development and integration, cloud-native and DevOps
+3. **Experience** (`#resume`): summary, education, certifications, work history, and a downloadable PDF resume
 
 ## Features
 
-- **Single Page Application** with hash-based navigation (#home, #about, #resume, etc.)
-- **Dark Theme** with cyan accent colors
-- **Fully Responsive** design that works on all devices
-- **Animated Background** on the home section
-- **Portfolio Gallery** with category filtering
-- **Contact Form** with Google Maps integration
-- **Smooth Scrolling** between sections
-- **Modern UI/UX** with hover effects and transitions
+- Single-page layout with smooth scrolling and hash-based navigation (the URL hash updates as you scroll)
+- Dark/light theme toggle via `next-themes` (dark by default)
+- Scroll progress indicator
+- Responsive layout with a mobile menu
+- Downloadable resume (`public/Abu Saleh Muhammad Shaon.pdf`)
 
-## Pages/Sections
+## Tech Stack
 
-1. **Home** - Hero section with animated background
-2. **About** - Personal information and statistics
-3. **Resume** - Education and professional experience
-4. **Portfolio** - Project showcase with filtering
-5. **Services** - Service offerings with testimonials
-6. **Contact** - Contact form and information
+- **Framework:** Next.js 16 (App Router)
+- **UI:** React 19, TypeScript 5
+- **Styling:** Tailwind CSS 4 plus custom CSS in `app/globals.css`
+- **Icons:** lucide-react and inline SVG
+- **Theming:** next-themes
+- **Email:** Resend (contact API route)
+- **Hosting:** Node.js server managed by PM2, deployed with GitHub Actions
 
 ## Getting Started
 
 ### Prerequisites
 
 - Node.js 20+
-- npm, yarn, or pnpm
+- npm
 
 ### Installation
 
 ```bash
-# Install dependencies
 npm install
-
-# Run development server
+cp .env.local.example .env.local   # then set RESEND_API_KEY
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000).
 
-### Build for Production
+### Scripts
 
-```bash
-# Create production build
-npm run build
+| Command         | Description              |
+| --------------- | ------------------------ |
+| `npm run dev`   | Start the dev server     |
+| `npm run build` | Create a production build |
+| `npm start`     | Run the production server |
+| `npm run lint`  | Run ESLint               |
 
-# Start production server
-npm start
-```
+There is no typecheck script. Run `npx tsc --noEmit` to type-check.
 
-## Customization
+## Environment Variables
 
-### 1. Add Your Images
-
-Add the following images to the `public` folder:
-- `/public/profile.jpg` - Your profile photo (500x500px)
-- `/public/projects/project1.jpg` through `project6.jpg` - Your project screenshots (800x600px)
-
-See [public/IMAGE_GUIDE.md](public/IMAGE_GUIDE.md) for details.
-
-### 2. Update Personal Information
-
-Edit the components to update your personal information:
-
-- **Sidebar.tsx** - Name and social media links
-- **Home.tsx** - Name and title
-- **About.tsx** - Bio, personal info, and statistics
-- **Resume.tsx** - Education and work experience
-- **Portfolio.tsx** - Project details and categories
-- **Services.tsx** - Your services and testimonials
-- **Contact.tsx** - Contact information and form
-
-### 3. Customize Colors
-
-Edit [app/globals.css](app/globals.css) to change the color scheme:
-
-```css
-:root {
-  --background: #0f172a;     /* Dark blue background */
-  --foreground: #e2e8f0;     /* Light text */
-  --sidebar-bg: #1e293b;     /* Sidebar background */
-  --accent: #06b6d4;         /* Cyan accent */
-  --accent-hover: #0891b2;   /* Darker cyan */
-  --card-bg: #1e293b;        /* Card background */
-  --border: #334155;         /* Border color */
-}
-```
-
-### 4. Update Social Links
-
-Edit [app/components/Sidebar.tsx](app/components/Sidebar.tsx) and replace the placeholder URLs with your actual social media profiles.
-
-## Navigation
-
-The website uses hash-based navigation. Users can navigate by:
-- Clicking navigation items in the sidebar
-- Using direct URLs like `https://yoursite.com/#contact`
-- The hash in the URL automatically updates as users scroll
-
-## Technology Stack
-
-- **Framework:** Next.js 16.0.5
-- **Language:** TypeScript 5
-- **Styling:** Tailwind CSS 4
-- **Icons:** SVG icons (embedded)
-- **Deployment:** Vercel, Netlify, or any static hosting
+| Variable         | Description                                                                 |
+| ---------------- | --------------------------------------------------------------------------- |
+| `RESEND_API_KEY` | API key from [Resend](https://resend.com/api-keys), used by `app/api/send-email` |
 
 ## Project Structure
 
 ```
 abu-saleh-portfolio/
 ├── app/
+│   ├── api/send-email/route.ts   # Contact form email endpoint (Resend)
 │   ├── components/
-│   │   ├── Sidebar.tsx      # Sidebar navigation
-│   │   ├── Home.tsx         # Home section
-│   │   ├── About.tsx        # About section
-│   │   ├── Resume.tsx       # Resume section
-│   │   ├── Portfolio.tsx    # Portfolio section
-│   │   ├── Services.tsx     # Services section
-│   │   └── Contact.tsx      # Contact section
-│   ├── globals.css          # Global styles
-│   ├── layout.tsx           # Root layout
-│   └── page.tsx             # Main page
+│   │   ├── Navbar.tsx            # Top navigation, theme toggle, social links
+│   │   ├── ScrollProgress.tsx    # Scroll progress bar
+│   │   ├── Portfolio.tsx         # Portfolio section
+│   │   ├── Services.tsx          # Services section
+│   │   ├── Resume.tsx            # Experience section
+│   │   ├── Footer.tsx            # Footer
+│   │   ├── Home.tsx              # Hero section (not currently rendered)
+│   │   ├── About.tsx             # About section (not currently rendered)
+│   │   └── Contact.tsx           # Contact form (not currently rendered)
+│   ├── globals.css               # Theme variables and custom styles
+│   ├── layout.tsx                # Root layout and metadata
+│   ├── page.tsx                  # Page composition
+│   └── providers.tsx             # Theme provider
 ├── public/
-│   ├── projects/            # Project images
-│   └── profile.jpg          # Profile photo
+│   ├── projects/                 # Project screenshots
+│   ├── profile.png               # Profile photo
+│   └── Abu Saleh Muhammad Shaon.pdf  # Resume
 └── package.json
 ```
 
+## Updating Content
+
+| What to change              | File                                   |
+| --------------------------- | -------------------------------------- |
+| Name, title, social links   | `app/components/Navbar.tsx`            |
+| Projects                    | `app/components/Portfolio.tsx`, images in `public/projects/` |
+| Services                    | `app/components/Services.tsx`          |
+| Experience and education    | `app/components/Resume.tsx`            |
+| Resume PDF                  | `public/Abu Saleh Muhammad Shaon.pdf`  |
+| Page title and description  | `app/layout.tsx`                       |
+| Colors                      | `:root` and `.dark` in `app/globals.css` |
+
 ## Deployment
 
-### Deploy to Vercel
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which connects to the server over SSH and:
 
-```bash
-npm install -g vercel
-vercel
-```
+1. Pulls the latest code into `/var/www/portfolio`
+2. Installs dependencies with `npm ci --include=dev`
+3. Builds with `npm run build`
+4. Reloads (or starts) the PM2 process `portfolio-app` on port **3001**
 
-### Deploy to Netlify
-
-```bash
-npm run build
-# Upload the .next folder to Netlify
-```
-
-## Responsive Design
-
-The website is fully responsive with breakpoints at:
-- **Desktop:** 1024px+ (full sidebar, 3-column grids)
-- **Tablet:** 768px - 1024px (narrower sidebar, 2-column grids)
-- **Mobile:** < 768px (top navigation, single column)
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+Required GitHub secrets: `SERVER_HOST`, `SERVER_USER`, `SSH_PRIVATE_KEY`.
 
 ## License
 
-This project is open source and available under the MIT License.
-
-## Credits
-
-- Design inspiration from iPortfolio template
-- Built with Next.js and Tailwind CSS
-- Icons embedded as SVG
-
-## Support
-
-For issues or questions, please open an issue on GitHub.
+© Abu Saleh Muhammad Shaon. All rights reserved.
