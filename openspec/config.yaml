@@ -1,0 +1,46 @@
+schema: spec-driven
+
+# Project context
+# This is shown to AI when creating artifacts.
+context: |
+  Domain: single-page personal portfolio for Abu Saleh (resume, services,
+  portfolio projects, contact form).
+  Tech stack: Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4
+  (via @tailwindcss/postcss), next-themes, lucide-react.
+  Next.js 16 has breaking changes versus older versions; check
+  node_modules/next/dist/docs/ before using Next.js APIs.
+  Structure: app/page.tsx stacks every section component from app/components/.
+  No sub-routes. Hash-based nav (#home, #about, ...) in the sidebar Navbar.
+  Interactive components are "use client"; others are Server Components.
+  Styling is a hybrid: theme variables in :root and many custom BEM-ish
+  classes in app/globals.css, mixed with Tailwind utilities. Breakpoints at
+  1024px and 768px in globals.css.
+  Contact form posts to app/api/send-email/route.ts (Resend API,
+  RESEND_API_KEY). Do not modify the committed .env.
+  Verification: no test suite; use npm run lint and npm run build
+  (npx tsc --noEmit for a faster type check).
+  Deployment: every push to main auto-deploys (GitHub Actions -> SSH ->
+  npm build -> PM2 portfolio-app on port 3001). Runs as a Node server; no
+  static export.
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always include a "Non-goals" section
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
+
+# Per-operation guidance (optional)
+# Add advisory guidance for how apply and archive work should be conducted.
+# This is separate from artifact rules above.
+# Example:
+#   operations:
+#     apply:
+#       guidance:
+#         - Keep test summaries concise
+#     archive:
+#       guidance:
+#         - Summarize the archive outcome before finishing

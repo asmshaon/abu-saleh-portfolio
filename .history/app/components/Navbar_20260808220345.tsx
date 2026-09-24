@@ -2,13 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { Sun, Moon, Menu, X, ArrowRight } from "lucide-react";
+import { Sun, Moon, Menu, X } from "lucide-react";
 import Link from "next/link";
-import { MAIN_SITE_CONTACT } from "../data/site";
 
 const menuItems = [
-  { id: "work", label: "Work" },
-  { id: "approach", label: "Approach" },
+  { id: "portfolio", label: "Portfolio" },
+  { id: "services", label: "Services" },
+  { id: "resume", label: "Experience" },
 ];
 
 function ThemeToggle() {
@@ -23,7 +23,7 @@ function ThemeToggle() {
   if (!mounted) {
     return (
       <button
-        className="text-slate-600 dark:text-gray-400 hover:text-accent transition-colors p-2"
+        className="text-gray-400 hover:text-white transition-colors p-2"
         aria-label="Toggle theme"
       >
         <div className="w-5 h-5" />
@@ -34,7 +34,7 @@ function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="text-slate-600 dark:text-gray-400 hover:text-accent transition-colors p-2"
+      className="text-gray-400 hover:text-white transition-colors p-2"
       aria-label="Toggle theme"
     >
       {theme === "dark" ? (
@@ -47,7 +47,7 @@ function ThemeToggle() {
 }
 
 export default function Navbar() {
-  const [activeSection, setActiveSection] = useState("work");
+  const [activeSection, setActiveSection] = useState("portfolio");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const scrollToSection = (
@@ -128,7 +128,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/85 dark:bg-dark-900/85 backdrop-blur-xl border-b border-slate-200 dark:border-dark-600">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-dark-900/80 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-16 lg:h-20">
             {/* Logo — left, takes equal space */}
@@ -138,22 +138,22 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
               >
-                <div className="w-8 h-8 rounded-md bg-accent flex items-center justify-center flex-shrink-0">
-                  <span className="text-ink-inverse font-display font-semibold text-sm">AS</span>
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent-light flex items-center justify-center flex-shrink-0">
+                  <span className="text-white font-bold text-sm">AS</span>
                 </div>
                 <div className="hidden sm:block">
-                  <div className="font-display text-accent font-semibold text-base leading-tight">
+                  <div className="text-white font-semibold text-sm leading-tight">
                     Abu Saleh
                   </div>
-                  <div className="text-slate-600 dark:text-gray-400 text-xs leading-tight">
-                    Portfolio
+                  <div className="text-gray-400 text-xs leading-tight">
+                    Senior Software Engineer
                   </div>
                 </div>
               </Link>
             </div>
 
             {/* Desktop Links — Centered */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-8">
               {menuItems.map((item) => (
                 <a
                   key={item.id}
@@ -173,7 +173,7 @@ export default function Navbar() {
                 href="https://www.linkedin.com/in/asmshaon"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden xl:flex text-slate-600 dark:text-gray-400 hover:text-accent transition-colors p-2"
+                className="hidden sm:flex text-gray-400 hover:text-white transition-colors p-2"
                 aria-label="LinkedIn"
               >
                 <svg
@@ -188,7 +188,7 @@ export default function Navbar() {
                 href="https://github.com/asmshaon"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden xl:flex text-slate-600 dark:text-gray-400 hover:text-accent transition-colors p-2"
+                className="hidden sm:flex text-gray-400 hover:text-white transition-colors p-2"
                 aria-label="GitHub"
               >
                 <svg
@@ -203,7 +203,7 @@ export default function Navbar() {
                 href="https://x.com/asmshaon"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden xl:flex text-slate-600 dark:text-gray-400 hover:text-accent transition-colors p-2"
+                className="hidden sm:flex text-gray-400 hover:text-white transition-colors p-2"
                 aria-label="X (Twitter)"
               >
                 <svg
@@ -215,20 +215,11 @@ export default function Navbar() {
                 </svg>
               </a>
 
-              <a
-                href={MAIN_SITE_CONTACT}
-                className="hidden sm:inline-flex btn-primary px-5 py-2 rounded-md text-sm font-semibold items-center gap-2 whitespace-nowrap"
-              >
-                Let&apos;s talk
-                <ArrowRight className="w-4 h-4" />
-              </a>
-
               {/* Mobile Toggle */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden text-accent p-2"
+                className="lg:hidden text-gray-300 p-2"
                 aria-label="Menu"
-                aria-expanded={isMobileMenuOpen}
               >
                 {isMobileMenuOpen ? (
                   <X className="w-6 h-6" />
@@ -243,7 +234,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown */}
       {isMobileMenuOpen && (
-        <div className="fixed top-16 left-0 right-0 bg-white dark:bg-dark-800 border-b border-slate-200 dark:border-dark-600 px-4 py-4 space-y-1 z-40 md:hidden">
+        <div className="fixed top-16 left-0 right-0 bg-dark-800 border-t border-white/5 px-4 py-4 space-y-1 z-40 lg:hidden">
           {menuItems.map((item) => (
             <a
               key={item.id}
@@ -251,16 +242,13 @@ export default function Navbar() {
               onClick={(e) => scrollToSection(e, item.id)}
               className={`block text-sm font-medium py-2 ${
                 activeSection === item.id
-                  ? "text-accent"
-                  : "text-slate-600 dark:text-gray-400"
+                  ? "text-accent-light"
+                  : "text-gray-300"
               }`}
             >
               {item.label}
             </a>
           ))}
-          <a href={MAIN_SITE_CONTACT} className="block text-sm font-semibold py-2 text-accent">
-            Let&apos;s talk →
-          </a>
         </div>
       )}
     </>

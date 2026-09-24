@@ -87,10 +87,7 @@ abu-saleh-portfolio/
 │   │   ├── Portfolio.tsx         # Portfolio section
 │   │   ├── Services.tsx          # Services section
 │   │   ├── Resume.tsx            # Experience section
-│   │   ├── Footer.tsx            # Footer
-│   │   ├── Home.tsx              # Hero section (not currently rendered)
-│   │   ├── About.tsx             # About section (not currently rendered)
-│   │   └── Contact.tsx           # Contact form (not currently rendered)
+│   │   └── Footer.tsx            # Footer
 │   ├── globals.css               # Theme variables and custom styles
 │   ├── layout.tsx                # Root layout and metadata
 │   ├── page.tsx                  # Page composition

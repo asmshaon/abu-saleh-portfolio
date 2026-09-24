@@ -1,23 +1,23 @@
 import Navbar from "./components/Navbar";
 import ScrollProgress from "./components/ScrollProgress";
-import Home from "./components/Home";
-import About from "./components/About";
-import Resume from "./components/Resume";
-import Portfolio from "./components/Portfolio";
-import Services from "./components/Services";
-import Footer from "@/app/components/Footer";
+import Hero from "./components/Hero";
+import Work from "./components/Work";
+import Approach from "./components/Approach";
+import CallToAction from "./components/CallToAction";
+import Footer from "./components/Footer";
 
 export default function Page() {
   return (
-    <div className="app-container">
+    <div className="min-h-full">
       <ScrollProgress />
       <Navbar />
-      <main className="main-content">
-        <Portfolio />
-        <Services />
-        <Resume />
-        <Footer />
+      <main>
+        <Hero />
+        <Work />
+        <Approach />
+        <CallToAction />
       </main>
+      <Footer />
     </div>
   );
 }
