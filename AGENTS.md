@@ -13,23 +13,34 @@ npm run lint      # ESLint (eslint-config-next + core-web-vitals + typescript)
 
 ## Architecture
 
-- **Single-page app** — all sections live in `app/page.tsx`, which imports every component from `app/components/`. There are no sub-routes.
-- **Hash-based navigation** — sidebar links use `#home`, `#about`, etc. Scroll matching updates the active nav item. No react-router.
-- **CSS is a hybrid** — Tailwind CSS 4 is configured (via `@tailwindcss/postcss`), but `app/globals.css` also defines extensive custom CSS classes (`.section`, `.portfolio-grid`, `.sidebar`, `.nav-item`, etc.). Components use a mix of both. Do NOT assume everything is Tailwind utility classes.
-- **API route** — `app/api/send-email/route.ts` powers the contact form. Uses Resend API. Requires `RESEND_API_KEY` env var.
-- **Mixed component types** — interactive components (`Sidebar`, `Home`, `Portfolio`, `Contact`, `ScrollProgress`) are `"use client"`. `About`, `Resume`, and `Services` are Server Components.
-- **Dynamic app, not static export** — `next.config.ts` has no `output: 'export'`. The deployed server runs `npm start` via PM2.
+- **Single-page app.** `app/page.tsx` stacks ScrollProgress, Navbar, then `<main>` with Hero, Work, Approach and CallToAction, followed by Footer. There are no sub-routes.
+- **Content lives in `app/data/`.**
+  - `projects.ts` holds the 12 projects (flagships first) and the Approach principles.
+  - `site.ts` holds the outbound links (main site, blog, profiles).
+  - Principle `projectId`s are type-checked against project ids.
+  - Projects come from the shareable career inventory. Clients stay anonymous except Gourmeal, the current engagement. Every figure must appear in that inventory.
+- **Hash-based navigation.** The top Navbar links to `#work` and `#approach`, and scroll matching updates the active item. Any in-page link to a project id (for example `#car-rental`) is caught by `Work`, which resets the filter to "All" and scrolls to that project.
+- **Components.**
+  - `Work` (the problem-type filter), `Navbar` and `ScrollProgress` are `"use client"`.
+  - Hero, Approach, CallToAction and Footer are Server Components.
+  - `FlagshipProject` and `ProjectCard` render inside `Work`, and "Inside the problem" on cards uses native `<details>`.
+- **No contact form or direct contact details on this site.** Every "Let's talk" button goes to the main site's contact form (`MAIN_SITE_CONTACT`). Don't add an email, phone, WhatsApp, map or CV download.
+- **`app/api/send-email/route.ts`** is left over from the old contact form and is no longer used by any page.
+- **Dynamic app, not static export.** `next.config.ts` has no `output: 'export'`. The deployed server runs `npm start` via PM2.
 
 ## Environment
 
-- Copy `.env.local.example` to `.env.local` and set `RESEND_API_KEY` for the contact form to work.
-- The `.env` file checked into the repo contains a real API key — do not modify or commit changes to it casually.
+- The `.env` file checked into the repo contains a real API key. Do not modify or commit changes to it casually.
 
 ## Styling Conventions
 
-- Theme variables are defined in `:root` in `globals.css` (not in Tailwind config).
-- CSS class naming follows BEM-ish flat names (`.section-title`, `.btn-primary`, `.portfolio-overlay`).
-- Responsive breakpoints are in `globals.css` at 1024px (tablet) and 768px (mobile).
+- The look matches the main landing site (`../landing`): monochrome black, white and neutral ash only, with no colored accents, gradients or glows. Light is the default theme and dark is available through the toggle.
+- `app/globals.css` holds the same token system as the landing site:
+  - `dark-*`, `slate-*` and `gray-*` all resolve to one neutral ash scale.
+  - `accent` is theme-aware ink (`--ink`) and `ink-inverse` is its opposite.
+  - `font-display` is the Newsreader serif for headings.
+  - A few shared classes: `btn-primary`, `eyebrow`, nav-link and scroll-progress styles.
+- Everything else is Tailwind utilities. Style both themes (pattern: `bg-slate-50 dark:bg-dark-800`). Every section follows the theme except `Footer`, which stays black.
 
 ## Deployment
 
